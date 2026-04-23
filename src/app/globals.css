@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme variables (from your old design) */
+:root {
+  --background: #ffffff;
+  --foreground: #1A2331;
+  --primary: #6DBFAA;
+  --scroll-track: #F7F9FC;
+  --scroll-thumb: #C5E8E0;
+  --process-bg: #EAF7F3;
+  --muted-text: #6B7B8D;
+  --card-border: #E8EEF4;
+  --accent: #D4AF6A;
+  --highlight-bg: #FFF8E7;
+   --soft-bg: #F7F9FC;
+   --green-bg: #78cbbd;
+}
+/* Base styles */
+@layer base {
+
+  html {
+    font-family: var(--font-dmsans), sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
+    font-family: var(--font-dmsans), sans-serif;
+  }
+
+  /* Headings use Cormorant Garamond for brand expression. */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cormorant), serif;
+  }
+
+}
+/* .font-dm {
+  font-family: 'DM Sans', sans-serif;
+} */
+/* Utilities */
+@layer utilities {
+  .eyebrow {
+    font-family: var(--font-dmsans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+
+  .nav-link-hover {
+    position: relative;
+  }
+
+  .nav-link-hover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link-hover:hover::after,
+  .nav-link-hover.active::after {
+    width: 100%;
+  }
+
+  .gallery-grid {
+    grid-auto-rows: 180px;
+  }
+
+  .whatsapp-pulse {
+    animation: pulse-whatsapp 2s ease-in-out infinite;
+  }
+}
+
+/* Responsive gallery */
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-auto-rows: 240px;
+  }
+}
+
+/* Animations */
+@keyframes pulse-whatsapp {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Scrollbar */
+.whatsapp-pulse {
+  animation: pulse-whatsapp 2s ease-in-out infinite;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F9FC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5E8E0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6DBFAA;
+}
