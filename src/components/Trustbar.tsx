@@ -1,4 +1,7 @@
+'use client';
+
 import { ShieldCheck, Star, Heart, Trophy } from "lucide-react";
+import { motion, Variants } from "framer-motion";
 
 const trustItems = [
   {
@@ -23,55 +26,89 @@ const trustItems = [
   },
 ];
 
+const container: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
 export default function Trustbar() {
   return (
     <section className="w-full bg-[#0f1f2e] text-white">
       <div className="max-w-7xl mx-auto px-6 py-10">
-        
-        {/* Desktop Layout */}
-        <div className="hidden md:grid grid-cols-4 divide-x divide-white/10">
-          {trustItems.map((item, index) => {
-            const Icon = item.icon;
+
+        {/* Desktop */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="hidden md:grid grid-cols-4 divide-x divide-white/10"
+        >
+          {trustItems.map((itemData, index) => {
+            const Icon = itemData.icon;
             return (
-              <div
+              <motion.div
                 key={index}
+                variants={item}
                 className="flex flex-col items-center text-center px-6"
               >
                 <Icon className="w-7 h-7 text-teal-400 mb-4" />
                 <h3 className="font-semibold text-base">
-                  {item.title}
+                  {itemData.title}
                 </h3>
                 <p className="text-sm text-gray-400 mt-1">
-                  {item.subtitle}
+                  {itemData.subtitle}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
-        {/* Mobile Layout */}
-        <div className="grid grid-cols-2 gap-y-10 md:hidden relative">
-          {/* Vertical divider */}
+        {/* Mobile */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-2 gap-y-10 md:hidden relative"
+        >
           <div className="absolute left-1/2 top-0 h-full w-px bg-white/10 -translate-x-1/2" />
 
-          {trustItems.map((item, index) => {
-            const Icon = item.icon;
+          {trustItems.map((itemData, index) => {
+            const Icon = itemData.icon;
             return (
-              <div
+              <motion.div
                 key={index}
+                variants={item}
                 className="flex flex-col items-center text-center px-4"
               >
                 <Icon className="w-6 h-6 text-teal-400 mb-3" />
                 <h3 className="font-semibold text-sm leading-snug">
-                  {item.title}
+                  {itemData.title}
                 </h3>
                 <p className="text-xs text-gray-400 mt-1">
-                  {item.subtitle}
+                  {itemData.subtitle}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
       </div>
     </section>

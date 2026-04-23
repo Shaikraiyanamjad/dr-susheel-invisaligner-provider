@@ -11,12 +11,10 @@ import {
   Zap,
 } from 'lucide-react';
 
-const SERVICES_BG = 'var(--scroll-track)';
+// constants
 const CARD_BORDER = 'var(--card-border)';
 const PRIMARY = 'var(--primary)';
 const ACCENT = 'var(--accent)';
-const TEXT_DARK = 'var(--foreground)';
-const TEXT_MUTED = 'var(--muted-text)';
 
 const services = [
   {
@@ -58,29 +56,34 @@ const services = [
   },
 ];
 
+// animations
 const container: Variants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.1,
+      delayChildren: 0.1,
     },
   },
 };
 
 const card: Variants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 30, scale: 0.98 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' },
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1], // smooth cubic-bezier (fixes TS issues)
+    },
   },
-  hover: { y: -6 },
 };
 
 function SectionHeader() {
   return (
     <div className="text-center mb-14">
-      <p className="uppercase tracking-widest text-sm text-[#6DBFAA] text-xs">
+      <p className="uppercase tracking-widest text-xs text-[#6DBFAA]">
         What We Offer
       </p>
 
@@ -112,8 +115,12 @@ export default function ServicesGrid() {
             <motion.div
               key={title}
               variants={card}
-              whileHover="hover"
-              className="relative bg-white rounded-2xl p-7 cursor-pointer shadow-sm hover:shadow-lg transition-shadow"
+              whileHover={{
+                y: -8,
+                scale: 1.02,
+                transition: { type: 'spring', stiffness: 250 },
+              }}
+              className="relative bg-white rounded-2xl p-7 cursor-pointer shadow-sm hover:shadow-xl"
               style={{
                 border: `1px solid ${CARD_BORDER}`,
                 borderTop: featured
@@ -122,39 +129,34 @@ export default function ServicesGrid() {
               }}
             >
               {featured && (
-                <div
-                  className="absolute top-4 right-4 text-[10px] uppercase font-medium px-2.5 py-1 rounded-full bg-highlight-bg text-accent"
-                  style={{
-                    letterSpacing: '0.06em',
-                  }}
-                >
+                <div className="absolute top-4 right-4 text-[10px] uppercase font-medium px-2.5 py-1 rounded-full bg-highlight-bg text-accent">
                   Most Popular
                 </div>
               )}
 
-              <div
+              {/* Icon */}
+              <motion.div
+                whileHover={{ rotate: 8, scale: 1.15 }}
+                transition={{ type: 'spring', stiffness: 300 }}
                 className="w-10 h-10 flex items-center justify-center rounded-full mb-5 bg-process-bg"
               >
                 <Icon size={18} color={PRIMARY} strokeWidth={1.5} />
-              </div>
+              </motion.div>
 
-              <h3
-                className="font-medium mb-2.5 text-foreground"
-                style={{ fontSize: 16 }}
-              >
+              {/* Title */}
+              <h3 className="font-medium mb-2.5 text-foreground text-base">
                 {title}
               </h3>
 
-              <p
-                className="leading-relaxed mb-5 line-clamp-3 text-muted-text"
-                style={{ fontSize: 14 }}
-              >
+              {/* Description */}
+              <p className="leading-relaxed mb-5 line-clamp-3 text-muted-text text-sm">
                 {desc}
               </p>
 
+              {/* Link */}
               <Link
                 href={href}
-                className="text-sm font-medium transition-opacity hover:opacity-80 text-primary"
+                className="text-sm font-medium text-primary hover:opacity-80 transition-opacity"
               >
                 Learn more →
               </Link>

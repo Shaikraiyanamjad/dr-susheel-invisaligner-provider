@@ -1,26 +1,28 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Clock, Heart, Mail } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-[#1A2331] text-white">
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-
         {/* LOGO + ABOUT */}
         <div>
-          <Image
-            src="/images/Logo.webp" // 👉 make sure this exists in /public
-            alt="Dr. Susheel Aligners"
-            width={150}
-            height={45}
-            className="object-contain"
-            priority
-          />
+          <Link href="/" aria-label="Go to homepage">
+            <Image
+              src="/images/Logo.webp"
+              alt="Dr. Susheel Aligners"
+              width={180}
+              height={40}
+              priority
+              className="cursor-pointer"
+            />
+          </Link>
 
           <p className="mt-5 text-sm text-white/60 leading-relaxed max-w-xs">
-            Hyderabad&apos;s premier Invisalign specialists and pediatric dental care clinic — where every smile has a story.
+            Hyderabad&apos;s premier Invisalign specialists and pediatric dental
+            care clinic — where every smile has a story.
           </p>
 
           <div className="flex gap-4 mt-6">
@@ -52,11 +54,11 @@ export default function Footer() {
 
           <ul className="space-y-3">
             {[
-              { label: 'About Dr. Susheel', path: '/about' },
-              { label: 'Invisalign Treatment', path: '/invisalign' },
-              { label: 'Pediatric Dentistry', path: '/pediatric' },
-              { label: 'All Services', path: '/services' },
-              { label: 'Book Appointment', path: '/contact' },
+              { label: "About Dr. Susheel", path: "/about" },
+              { label: "Invisalign Treatment", path: "/invisalign" },
+              { label: "Pediatric Dentistry", path: "/pediatric" },
+              { label: "All Services", path: "/services" },
+              { label: "Book Appointment", path: "/contact" },
             ].map((link) => (
               <li key={link.path}>
                 <Link
@@ -78,12 +80,12 @@ export default function Footer() {
 
           <ul className="space-y-3">
             {[
-              'Invisalign Aligners',
-              'Pediatric Dentistry',
-              'Teeth Whitening',
-              'Dental Implants',
-              'Smile Makeover',
-              'Orthodontics',
+              "Invisalign Aligners",
+              "Pediatric Dentistry",
+              "Teeth Whitening",
+              "Dental Implants",
+              "Smile Makeover",
+              "Orthodontics",
             ].map((service) => (
               <li key={service}>
                 <Link
@@ -107,7 +109,8 @@ export default function Footer() {
             <li className="flex gap-3 items-start">
               <MapPin size={15} className="text-[#6DBFAA] mt-0.5 shrink-0" />
               <span className="text-sm text-white/60 leading-relaxed">
-                Dwaraka Nagar Colony,<br />
+                Dwaraka Nagar Colony,
+                <br />
                 Shaikpet, Hyderabad — 500008
               </span>
             </li>
@@ -123,10 +126,18 @@ export default function Footer() {
             </li>
 
             <li className="flex gap-3 items-center">
+  <Mail size={15} className="text-[#6DBFAA] shrink-0" />
+  <a
+    href="mailto:ramdaspallysusheel@gmail.com"
+    className="text-sm text-white/60 hover:text-[#6DBFAA] transition"
+  >
+    ramdaspallysusheel@gmail.com
+  </a>
+</li>
+
+            <li className="flex gap-3 items-center">
               <Clock size={15} className="text-[#6DBFAA] shrink-0" />
-              <span className="text-sm text-white/60">
-                Mon–Sat: 10am – 7pm
-              </span>
+              <span className="text-sm text-white/60">Mon–Sat: 10am – 7pm</span>
             </li>
           </ul>
         </div>
@@ -136,7 +147,8 @@ export default function Footer() {
       <div className="border-t border-white/10 py-6">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} Dr. Susheel Aligners. All rights reserved.
+            © {new Date().getFullYear()} Dr. Susheel Aligners. All rights
+            reserved.
           </p>
 
           <p className="text-xs text-white/40">

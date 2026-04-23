@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { motion, useReducedMotion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
+import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 const fadeIn = {
   hidden: { opacity: 0 },
@@ -31,14 +31,13 @@ export default function Hero() {
       className="bg-background"
     >
       <div className="mx-auto grid min-h-screen max-w-[1920px] grid-cols-1 lg:grid-cols-[6fr_4fr] xl:grid-cols-[6fr_4fr]">
-        
         {/* Image Section */}
         <motion.div
           variants={reduceMotion ? {} : slideLeft}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative order-1 min-h-[420px] sm:min-h-[560px] lg:order-none lg:min-h-screen"
         >
           <Image
@@ -60,11 +59,10 @@ export default function Hero() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
           className="order-2 flex items-center px-6 py-12 sm:px-10 lg:order-none lg:px-14 xl:px-16"
         >
           <div className="max-w-lg lg:max-w-md xl:max-w-lg">
-            
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] eyebrow sm:text-sm">
               Hyderabad&apos;s Invisalign Specialists
             </p>
@@ -77,36 +75,36 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 max-w-md text-sm leading-7 text-[#667085] sm:text-base sm:leading-8 xl:text-lg">
-              Expert Invisalign treatment and gentle pediatric dental care in Hyderabad where every smile has a story.
+              Expert Invisalign treatment and gentle pediatric dental care in
+              Hyderabad where every smile has a story.
             </p>
 
             {/* Buttons */}
-<div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
-  <Link
-    href="/contact"
-    className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[#78cbbd] 
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[#78cbbd] 
     px-6 py-3 font-medium text-white transition hover:opacity-90
     text-[clamp(14px,1.1vw,16px)]"
-  >
-    Book Free Consultation
-  </Link>
+              >
+                Book Free Consultation
+              </Link>
 
-  <Link
-    href="/plans"
-    className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-[#78cbbd] 
+              <Link
+                href="/invisalign"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-[#78cbbd] 
     px-6 py-3 font-medium text-[#78cbbd] transition hover:bg-[#78cbbd]/10
     text-[clamp(14px,1.1vw,16px)]"
-  >
-    View Invisalign Plans →
-  </Link>
-</div>
+              >
+                View Invisalign Plans →
+              </Link>
+            </div>
             {/* Stats */}
             <div className="mt-8 grid gap-3 text-xs text-[#667085] sm:grid-cols-3 sm:gap-4 sm:text-sm">
               <span>500+ Happy Patients</span>
               <span>Certified Invisalign Provider</span>
               <span>Child-Friendly Practice</span>
             </div>
-
           </div>
         </motion.div>
       </div>

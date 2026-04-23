@@ -25,13 +25,16 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
 
         {/* Logo */}
-        <Image
-          src="/images/Logo.webp"
-          alt="Dr. Susheel Aligners"
-          width={180}
-          height={40}
-          priority
-        />
+       <Link href="/" aria-label="Go to homepage">
+  <Image
+    src="/images/Logo.webp"
+    alt="Dr. Susheel Aligners"
+    width={180}
+    height={40}
+    priority
+    className="cursor-pointer"
+  />
+</Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6 text-gray-700 text-md">
@@ -68,9 +71,11 @@ const Header = () => {
 
         {/* Button */}
         <div className="hidden lg:block">
-          <button className="bg-green-bg text-white px-5 py-2 rounded-full hover:bg-teal-600 transition">
-            Book Now
-          </button>
+          <Link href="/contact">
+            <button className="bg-green-bg text-white px-5 py-2 rounded-full hover:bg-teal-600 transition">
+              Book Now
+            </button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
