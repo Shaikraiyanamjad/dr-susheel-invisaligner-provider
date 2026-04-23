@@ -81,22 +81,25 @@ export default function Hero() {
             </p>
 
             {/* Buttons */}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
-              <Link
-                href="/contact"
-                className="rounded-full bg-[#78cbbd] px-6 py-3 text-sm font-medium text-white text-center transition hover:opacity-90 sm:px-7 sm:py-3.5 sm:text-base xl:px-8 xl:py-4"
-              >
-                Book Free Consultation
-              </Link>
+<div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+  <Link
+    href="/contact"
+    className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[#78cbbd] 
+    px-6 py-3 font-medium text-white transition hover:opacity-90
+    text-[clamp(14px,1.1vw,16px)]"
+  >
+    Book Free Consultation
+  </Link>
 
-              <Link
-                href="/plans"
-                className="rounded-full border border-[#78cbbd] px-6 py-3 text-sm font-medium text-[#78cbbd] text-center transition hover:bg-[#78cbbd]/10 sm:px-7 sm:py-3.5 sm:text-base xl:px-8 xl:py-4"
-              >
-                View Invisalign Plans →
-              </Link>
-            </div>
-
+  <Link
+    href="/plans"
+    className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-[#78cbbd] 
+    px-6 py-3 font-medium text-[#78cbbd] transition hover:bg-[#78cbbd]/10
+    text-[clamp(14px,1.1vw,16px)]"
+  >
+    View Invisalign Plans →
+  </Link>
+</div>
             {/* Stats */}
             <div className="mt-8 grid gap-3 text-xs text-[#667085] sm:grid-cols-3 sm:gap-4 sm:text-sm">
               <span>500+ Happy Patients</span>
