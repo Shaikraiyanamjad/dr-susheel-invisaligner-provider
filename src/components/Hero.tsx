@@ -28,9 +28,9 @@ export default function Hero() {
       initial="hidden"
       animate="show"
       transition={{ duration: 0.4 }}
-      className="bg-background"
+      className="bg-background overflow-x-hidden"
     >
-      <div className="mx-auto grid min-h-screen max-w-[1920px] grid-cols-1 lg:grid-cols-[6fr_4fr] xl:grid-cols-[6fr_4fr]">
+      <div className="mx-auto grid min-h-screen max-w-[1920px] grid-cols-1 lg:grid-cols-[6fr_4fr] xl:grid-cols-[6fr_4fr] overflow-x-hidden">
         {/* Image Section */}
         <motion.div
           variants={reduceMotion ? {} : slideLeft}
@@ -38,7 +38,7 @@ export default function Hero() {
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative order-1 min-h-[420px] sm:min-h-[560px] lg:order-none lg:min-h-screen"
+          className="relative order-1 min-h-[420px] sm:min-h-[560px] lg:order-none lg:min-h-screen overflow-hidden"
         >
           <Image
             src="/images/hero.webp"
