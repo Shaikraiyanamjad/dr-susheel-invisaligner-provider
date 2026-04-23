@@ -10,12 +10,12 @@ const fadeIn = {
 };
 
 const slideLeft = {
-  hidden: { x: -30, opacity: 0 },
+  hidden: { x: -20, opacity: 0 },
   show: { x: 0, opacity: 1 },
 };
 
 const slideRight = {
-  hidden: { x: 30, opacity: 0 },
+  hidden: { x: 20, opacity: 0 },
   show: { x: 0, opacity: 1 },
 };
 
@@ -27,42 +27,46 @@ export default function Hero() {
       variants={fadeIn}
       initial="hidden"
       animate="show"
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.3 }}
       className="bg-background overflow-x-hidden"
     >
-      <div className="mx-auto grid min-h-screen max-w-[1920px] grid-cols-1 lg:grid-cols-[6fr_4fr] xl:grid-cols-[6fr_4fr] overflow-x-hidden">
+      <div className="mx-auto grid min-h-screen max-w-[1920px] grid-cols-1 lg:grid-cols-[6fr_4fr] overflow-x-hidden">
+        
         {/* Image Section */}
         <motion.div
           variants={reduceMotion ? {} : slideLeft}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative order-1 min-h-[420px] sm:min-h-[560px] lg:order-none lg:min-h-screen overflow-hidden"
+          animate="show"
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="relative order-1 min-h-[420px] sm:min-h-[560px] lg:min-h-screen overflow-hidden"
         >
           <Image
             src="/images/hero.webp"
             alt="Invisalign clear aligners held by dentist gloves"
             fill
             priority
-            sizes="(max-width: 1024px) 100vw, 65vw"
+            quality={85} // balance between quality & speed
+            sizes="(max-width: 640px) 100vw,
+                   (max-width: 1024px) 100vw,
+                   (max-width: 1280px) 60vw,
+                   65vw"
             className="object-cover"
-            placeholder="blur"
-            blurDataURL="/images/hero-blur.jpg"
           />
-          <div className="absolute inset-0 bg-white/10" />
+
+          {/* lighter overlay = faster paint */}
+          <div className="absolute inset-0 bg-white/5" />
         </motion.div>
 
         {/* Content Section */}
         <motion.div
           variants={reduceMotion ? {} : slideRight}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          className="order-2 flex items-center px-6 py-12 sm:px-10 lg:order-none lg:px-14 xl:px-16"
+          animate="show"
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}
+          className="order-2 flex items-center px-6 py-12 sm:px-10 lg:px-14 xl:px-16"
         >
           <div className="max-w-lg lg:max-w-md xl:max-w-lg">
+            
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] eyebrow sm:text-sm">
               Hyderabad&apos;s Invisalign Specialists
             </p>
@@ -84,8 +88,8 @@ export default function Hero() {
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[#78cbbd] 
-    px-6 py-3 font-medium text-white transition hover:opacity-90
-    text-[clamp(14px,1.1vw,16px)]"
+                px-6 py-3 font-medium text-white transition hover:opacity-90
+                text-[clamp(14px,1.1vw,16px)]"
               >
                 Book Free Consultation
               </Link>
@@ -93,18 +97,20 @@ export default function Hero() {
               <Link
                 href="/invisalign"
                 className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-[#78cbbd] 
-    px-6 py-3 font-medium text-[#78cbbd] transition hover:bg-[#78cbbd]/10
-    text-[clamp(14px,1.1vw,16px)]"
+                px-6 py-3 font-medium text-[#78cbbd] transition hover:bg-[#78cbbd]/10
+                text-[clamp(14px,1.1vw,16px)]"
               >
                 View Invisalign Plans →
               </Link>
             </div>
+
             {/* Stats */}
             <div className="mt-8 grid gap-3 text-xs text-[#667085] sm:grid-cols-3 sm:gap-4 sm:text-sm">
               <span>500+ Happy Patients</span>
               <span>Certified Invisalign Provider</span>
               <span>Child-Friendly Practice</span>
             </div>
+
           </div>
         </motion.div>
       </div>

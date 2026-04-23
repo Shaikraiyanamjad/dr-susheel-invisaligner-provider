@@ -106,10 +106,11 @@ const Header = () => {
       </h2>
     );
   })}
-
+<Link href="/contact" className="w-full">
   <button className="mt-3 w-full bg-teal-500 text-white py-2 px-20 rounded-full">
     Book Now
   </button>
+  </Link>
 </div>
       )}
     </header>
