@@ -30,8 +30,7 @@ export default function Hero() {
       transition={{ duration: 0.4 }}
       className="bg-background"
     >
-      <div className="mx-auto grid min-h-screen max-w-[1920px] grid-cols-1 lg:grid-cols-2">
-        
+   <div className="mx-auto grid min-h-screen max-w-[1920px] grid-cols-1 lg:grid-cols-[6fr_4fr]">
         {/* Image Section */}
         <motion.div
           variants={reduceMotion ? {} : slideLeft}
@@ -42,14 +41,14 @@ export default function Hero() {
           className="relative order-1 min-h-[420px] sm:min-h-[560px] lg:order-none lg:min-h-screen"
         >
           <Image
-            src="/images/hero.webp"
+            src="/images/hero.png"
             alt="Invisalign clear aligners held by dentist gloves"
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 58vw"
             className="object-cover"
             placeholder="blur"
-            blurDataURL="/images/hero-blur.webp"
+            blurDataURL="/images/hero-blur.jpg"
           />
           <div className="absolute inset-0 bg-white/10" />
         </motion.div>
