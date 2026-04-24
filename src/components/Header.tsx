@@ -21,7 +21,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur py-4">
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
 
         {/* Logo */}
@@ -107,7 +107,7 @@ const Header = () => {
     );
   })}
 <Link href="/contact" className="w-full">
-  <button className="mt-3 w-full bg-teal-500 text-white py-2 px-20 rounded-full">
+  <button className="mt-3 w-full bg-green-bg text-white py-2 px-20 rounded-full">
     Book Now
   </button>
   </Link>

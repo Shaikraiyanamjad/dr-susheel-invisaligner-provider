@@ -39,7 +39,7 @@ export default function Hero() {
         >
           <div className="max-w-lg lg:max-w-md xl:max-w-lg">
             
-            <p className="mb-3 text-xs text-primary uppercase tracking-[0.25em] sm:text-sm">
+            <p className="mb-3 text-xs text-green-bg uppercase tracking-[0.25em] sm:text-sm">
               Hyderabad&apos;s Invisalign Specialists
             </p>
 
