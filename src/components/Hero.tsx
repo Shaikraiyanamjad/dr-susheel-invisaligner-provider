@@ -12,16 +12,15 @@ export default function Hero() {
       <div className="mx-auto grid min-h-[100svh] max-w-[1920px] grid-cols-1 lg:grid-cols-[6fr_4fr]">
         
         {/* Image Section */}
-        <div className="relative order-1 h-[420px] sm:h-[560px] lg:h-auto lg:min-h-screen">
+        <div className="relative order-1 h-[420px] sm:h-[560px] lg:min-h-screen">
           <Image
             src="/images/hero.webp"
             alt="Invisalign clear aligners held by dentist gloves"
             fill
-            priority={false} // 🔥 critical fix
-            quality={75} // 🔥 lighter image
-            sizes="(max-width: 768px) 100vw, 60vw" // 🔥 smaller mobile load
-            placeholder="blur" // 🔥 perceived speed boost
-            blurDataURL="/images/hero-blur.jpg" // tiny blurred image
+            quality={75}
+            sizes="(max-width: 768px) 100vw, 60vw"
+            placeholder="blur"
+            blurDataURL="/images/hero-blur.jpg"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-white/5" />
@@ -29,14 +28,18 @@ export default function Hero() {
 
         {/* Content Section */}
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, x: 20 }}
-          animate={reduceMotion ? {} : { opacity: 1, x: 0 }}
+          initial={false} // 🔥 no hidden state = instant render
+          animate={
+            reduceMotion
+              ? {}
+              : { opacity: [0, 1], x: [20, 0] }
+          }
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="order-2 flex items-center px-6 py-10 sm:px-10 lg:px-14 xl:px-16"
         >
           <div className="max-w-lg lg:max-w-md xl:max-w-lg">
             
-            <p className="mb-3 text-xs font-semibold eyebrow tracking-[0.25em] sm:text-sm">
+            <p className="mb-3 text-xs text-primary uppercase tracking-[0.25em] sm:text-sm">
               Hyderabad&apos;s Invisalign Specialists
             </p>
 
