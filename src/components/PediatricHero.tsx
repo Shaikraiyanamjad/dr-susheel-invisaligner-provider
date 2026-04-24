@@ -20,7 +20,7 @@ function Button({ children }: { children: React.ReactNode }) {
 /* ---------------------------------- */
 export default function PediatricHero() {
   return (
-    <section className="pt-7 pb-20 px-6 relative overflow-hidden bg-process-bg">
+    <section className="pt-12 pb-20 px-6 relative overflow-hidden bg-process-bg">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
         {/* LEFT */}
