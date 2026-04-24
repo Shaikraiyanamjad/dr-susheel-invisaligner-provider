@@ -4,108 +4,75 @@ import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-const fadeIn = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 },
-};
-
-const slideLeft = {
-  hidden: { x: -20, opacity: 0 },
-  show: { x: 0, opacity: 1 },
-};
-
-const slideRight = {
-  hidden: { x: 20, opacity: 0 },
-  show: { x: 0, opacity: 1 },
-};
-
 export default function Hero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <motion.section
-      variants={fadeIn}
-      initial="hidden"
-      animate="show"
-      transition={{ duration: 0.3 }}
-      className="bg-background overflow-x-hidden"
-    >
-      <div className="mx-auto grid min-h-screen max-w-[1920px] grid-cols-1 lg:grid-cols-[6fr_4fr] overflow-x-hidden">
+    <section className="bg-background overflow-x-hidden">
+      <div className="mx-auto grid min-h-[100svh] max-w-[1920px] grid-cols-1 lg:grid-cols-[6fr_4fr]">
         
         {/* Image Section */}
-        <motion.div
-          variants={reduceMotion ? {} : slideLeft}
-          initial="hidden"
-          animate="show"
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="relative order-1 min-h-[420px] sm:min-h-[560px] lg:min-h-screen overflow-hidden"
-        >
+        <div className="relative order-1 h-[420px] sm:h-[560px] lg:h-auto lg:min-h-screen">
           <Image
             src="/images/hero.webp"
             alt="Invisalign clear aligners held by dentist gloves"
             fill
-            priority
-            quality={85} // balance between quality & speed
-            sizes="(max-width: 640px) 100vw,
-                   (max-width: 1024px) 100vw,
-                   (max-width: 1280px) 60vw,
-                   65vw"
+            priority={false} // 🔥 critical fix
+            quality={75} // 🔥 lighter image
+            sizes="(max-width: 768px) 100vw, 60vw" // 🔥 smaller mobile load
+            placeholder="blur" // 🔥 perceived speed boost
+            blurDataURL="/images/hero-blur.jpg" // tiny blurred image
             className="object-cover"
           />
-
-          {/* lighter overlay = faster paint */}
           <div className="absolute inset-0 bg-white/5" />
-        </motion.div>
+        </div>
 
         {/* Content Section */}
         <motion.div
-          variants={reduceMotion ? {} : slideRight}
-          initial="hidden"
-          animate="show"
-          transition={{ duration: 0.5, ease: "easeOut", delay: 0.05 }}
-          className="order-2 flex items-center px-6 py-12 sm:px-10 lg:px-14 xl:px-16"
+          initial={reduceMotion ? false : { opacity: 0, x: 20 }}
+          animate={reduceMotion ? {} : { opacity: 1, x: 0 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="order-2 flex items-center px-6 py-10 sm:px-10 lg:px-14 xl:px-16"
         >
           <div className="max-w-lg lg:max-w-md xl:max-w-lg">
             
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] eyebrow sm:text-sm">
+            <p className="mb-3 text-xs font-semibold eyebrow tracking-[0.25em] sm:text-sm">
               Hyderabad&apos;s Invisalign Specialists
             </p>
 
-            <h1 className="text-4xl font-semibold leading-[1] tracking-tight text-[#101828] sm:text-5xl xl:text-6xl 2xl:text-7xl">
+            <h1 className="text-3xl font-semibold leading-tight tracking-tight text-[#101828] sm:text-5xl xl:text-6xl">
               A Smile Worth Showing.
               <span className="mt-2 block text-[#78cbbd]">
                 Crafted With Precision.
               </span>
             </h1>
 
-            <p className="mt-6 max-w-md text-sm leading-7 text-[#667085] sm:text-base sm:leading-8 xl:text-lg">
+            <p className="mt-4 max-w-md text-sm leading-6 text-[#667085] sm:text-base sm:leading-7 xl:text-lg">
               Expert Invisalign treatment and gentle pediatric dental care in
               Hyderabad where every smile has a story.
             </p>
 
             {/* Buttons */}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[#78cbbd] 
-                px-6 py-3 font-medium text-white transition hover:opacity-90
-                text-[clamp(14px,1.1vw,16px)]"
+                className="inline-flex items-center justify-center rounded-full bg-[#78cbbd] 
+                px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
               >
                 Book Free Consultation
               </Link>
 
               <Link
                 href="/invisalign"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-[#78cbbd] 
-                px-6 py-3 font-medium text-[#78cbbd] transition hover:bg-[#78cbbd]/10
-                text-[clamp(14px,1.1vw,16px)]"
+                className="inline-flex items-center justify-center rounded-full border border-[#78cbbd] 
+                px-5 py-2.5 text-sm font-medium text-[#78cbbd] transition hover:bg-[#78cbbd]/10"
               >
                 View Invisalign Plans →
               </Link>
             </div>
 
             {/* Stats */}
-            <div className="mt-8 grid gap-3 text-xs text-[#667085] sm:grid-cols-3 sm:gap-4 sm:text-sm">
+            <div className="mt-6 grid gap-2 text-xs text-[#667085] sm:grid-cols-3 sm:text-sm">
               <span>500+ Happy Patients</span>
               <span>Certified Invisalign Provider</span>
               <span>Child-Friendly Practice</span>
@@ -114,6 +81,6 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 }
