@@ -73,7 +73,7 @@ export default function Comparison() {
   ];
 
   return (
-    <section className="pb-20 px-6 bg-background">
+    <section className="py-20 px-6 bg-background">
       <div className="max-w-5xl mx-auto">
 
         <SectionHeader

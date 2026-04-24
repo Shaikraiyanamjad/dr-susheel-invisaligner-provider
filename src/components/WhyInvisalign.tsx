@@ -68,7 +68,7 @@ export default function WhyInvisalign() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-scrollTrack">
+    <section className="py-18 px-6 bg-scrollTrack">
       <div className="max-w-7xl mx-auto">
 
         <SectionHeader
