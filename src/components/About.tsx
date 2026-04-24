@@ -28,7 +28,7 @@ const itemRight = {
 
 export default function About() {
   return (
-    <section className="pt-6 pb-20 px-6 bg-white">
+    <section className="pt-8 pb-20 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
