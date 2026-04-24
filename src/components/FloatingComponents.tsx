@@ -21,13 +21,13 @@ export default function FloatingComponents() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="whatsapp-pulse fixed bottom-24 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg bg-[#25D366] md:bottom-8"
+        className="whatsapp-pulse fixed bottom-24 right-6 z-[55] w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg bg-[#25D366] md:bottom-8"
       >
         <WhatsAppIcon />
       </a>
 
       {/* MOBILE BOTTOM BAR */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden flex h-16 bg-white border-t-2 border-[#6DBFAA]">
+      <div className="fixed bottom-0 left-0 right-0 z-[55] md:hidden flex h-16 bg-white border-t-2 border-[#6DBFAA]">
 
         {/* CALL */}
         <a

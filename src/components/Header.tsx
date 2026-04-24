@@ -21,7 +21,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur py-2">
+    <header className="fixed top-0 left-0 right-0 z-[60] bg-white/90 backdrop-blur py-2">
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
 
         {/* Logo */}
@@ -71,10 +71,8 @@ const Header = () => {
 
         {/* Button */}
         <div className="hidden lg:block">
-          <Link href="/contact">
-            <button className="bg-green-bg text-white px-5 py-2 rounded-full hover:bg-teal-600 transition">
-              Book Now
-            </button>
+          <Link href="/contact" className="bg-green-bg text-white px-5 py-2 rounded-full hover:bg-teal-600 transition inline-block">
+            <span className="cursor-pointer">Book Now</span>
           </Link>
         </div>
 
@@ -107,10 +105,10 @@ const Header = () => {
     );
   })}
 <Link href="/contact" className="w-full">
-  <button className="mt-3 w-full bg-green-bg text-white py-2 px-20 rounded-full">
+  <span className="mt-3 w-full block text-center bg-green-bg text-white py-2 px-20 rounded-full cursor-pointer">
     Book Now
-  </button>
-  </Link>
+  </span>
+</Link>
 </div>
       )}
     </header>
