@@ -34,18 +34,18 @@ export default function TheProcess() {
             The Process
           </p>
 
-          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-[#101828]">
+          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-foreground">
             Your Invisalign Journey
           </h2>
 
-          <p className="mt-4 text-sm text-gray-500 leading-relaxed">
+          <p className="mt-4 text-sm text-muted-text leading-relaxed">
             Four thoughtful steps from consultation to your new smile — transparent, precise, and centred around your comfort.
           </p>
         </div>
 
         {/* CONNECTING LINE */}
         <div className="relative mt-16">
-          <div className="hidden lg:block absolute top-9 left-[12.5%] right-[12.5%] h-px border-t-2 border-dashed border-[#6DBFAA]/40" />
+          <div className="hidden lg:block absolute top-9 left-[12.5%] right-[12.5%] h-px border-t-2 border-dashed border-primary/40" />
 
           {/* STEPS */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-6">

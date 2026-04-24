@@ -30,7 +30,7 @@ export default function Quote() {
 
           {/* Quote Text */}
           <blockquote
-            className="font-bold text-gray-900 mb-6"
+            className="font-bold text-foreground mb-6"
             style={{
               fontSize: 'clamp(22px, 3vw, 36px)',
               lineHeight: '1.4',
@@ -42,7 +42,7 @@ export default function Quote() {
 
           {/* Author */}
           <p
-            className="font-medium text-gray-500"
+            className="font-medium text-muted-text"
             style={{
               fontSize: '14px',
               fontFamily: 'var(--font-dm)',

@@ -56,11 +56,11 @@ export default function Testimonials() {
             Patient Stories
           </p>
 
-          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-[#101828]">
+          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-foreground">
             Words From Our Patients
           </h2>
 
-          <p className="mt-4 text-sm text-gray-500 leading-relaxed">
+          <p className="mt-4 text-sm text-muted-text leading-relaxed">
             Over 500 smiles transformed — here&apos;s what some of them have to say.
           </p>
         </div>

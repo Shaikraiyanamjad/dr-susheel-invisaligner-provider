@@ -28,7 +28,7 @@ export default function FormAndMap() {
   };
 
   return (
-    <section className="py-16 px-6 bg-[#F7F9FC]">
+    <section className="py-16 px-6 bg-soft-bg">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[55%_45%] gap-10">
 
         {/* MAP */}
@@ -48,22 +48,22 @@ export default function FormAndMap() {
 
         {/* FORM */}
         <motion.div
-          className="bg-white rounded-2xl p-8 border border-[#E8EEF4] shadow-sm"
+          className="bg-white rounded-2xl p-8 border border-card-border shadow-sm"
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
           {submitted ? (
             <div className="h-full flex flex-col items-center justify-center text-center py-8">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mb-5 bg-[#EAF7F3]">
-                <CheckCircle size={28} className="text-[#6DBFAA]" />
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mb-5 bg-process-bg">
+                <CheckCircle size={28} className="text-primary" />
               </div>
 
-              <h2 className="font-cormorant font-bold text-[28px] text-[#1A2331] mb-3">
+              <h2 className="font-cormorant font-bold text-[28px] text-foreground mb-3">
                 Appointment Requested!
               </h2>
 
-              <p className="font-dm font-light text-slate-500 text-[15px] leading-[1.8]">
+              <p className="font-dm font-light text-muted-text text-[15px] leading-[1.8]">
                 Thank you! We&apos;ll confirm your appointment within 2 hours during clinic hours.
               </p>
 
@@ -78,7 +78,7 @@ export default function FormAndMap() {
             </div>
           ) : (
             <>
-              <h2 className="font-cormorant font-bold text-[26px] text-[#1A2331] mb-6">
+              <h2 className="font-cormorant font-bold text-[26px] text-foreground mb-6">
                 Request Appointment
               </h2>
 
@@ -86,13 +86,13 @@ export default function FormAndMap() {
 
                 {/* NAME */}
                 <div>
-                  <label className="block mb-1.5 text-[13px] font-medium text-[#1A2331]">
+                  <label className="block mb-1.5 text-[13px] font-medium text-foreground">
                     Full Name
                   </label>
                   <input
                     type="text"
                     placeholder="Your full name"
-                    className="w-full px-4 py-3 rounded-xl border border-[#E8EEF4] bg-[#F7F9FC] text-[14px] outline-none focus:border-[#6DBFAA]"
+                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-soft-bg text-[14px] outline-none focus:border-primary"
                     {...register('name', { required: 'Name is required' })}
                   />
                   {errors.name && (
@@ -104,19 +104,19 @@ export default function FormAndMap() {
 
                 {/* PHONE */}
                 <div>
-                  <label className="block mb-1.5 text-[13px] font-medium text-[#1A2331]">
+                  <label className="block mb-1.5 text-[13px] font-medium text-foreground">
                     Phone Number
                   </label>
 
                   <div className="flex">
-                    <span className="px-3 flex items-center text-[14px] border border-[#E8EEF4] border-r-0 rounded-l-xl bg-[#F0F4F8] text-slate-500">
+                    <span className="px-3 flex items-center text-[14px] border border-card-border border-r-0 rounded-l-xl bg-scroll-track text-muted-text">
                       +91
                     </span>
 
                     <input
                       type="tel"
                       placeholder="Your mobile number"
-                      className="flex-1 px-4 py-3 rounded-r-xl border border-[#E8EEF4] bg-[#F7F9FC] text-[14px] outline-none focus:border-[#6DBFAA]"
+                      className="flex-1 px-4 py-3 rounded-r-xl border border-card-border bg-soft-bg text-[14px] outline-none focus:border-primary"
                       {...register('phone', { required: 'Phone is required' })}
                     />
                   </div>
@@ -130,12 +130,12 @@ export default function FormAndMap() {
 
                 {/* SERVICE */}
                 <div>
-                  <label className="block mb-1.5 text-[13px] font-medium text-[#1A2331]">
+                  <label className="block mb-1.5 text-[13px] font-medium text-foreground">
                     Service Required
                   </label>
 
                   <select
-                    className="w-full px-4 py-3 rounded-xl border border-[#E8EEF4] bg-[#F7F9FC] text-[14px] outline-none focus:border-[#6DBFAA]"
+                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-soft-bg text-[14px] outline-none focus:border-primary"
                     {...register('service', { required: 'Select a service' })}
                   >
                     <option value="">Select a service</option>
@@ -155,27 +155,27 @@ export default function FormAndMap() {
 
                 {/* DATE */}
                 <div>
-                  <label className="block mb-1.5 text-[13px] font-medium text-[#1A2331]">
+                  <label className="block mb-1.5 text-[13px] font-medium text-foreground">
                     Preferred Date
                   </label>
 
                   <input
                     type="date"
-                    className="w-full px-4 py-3 rounded-xl border border-[#E8EEF4] bg-[#F7F9FC] text-[14px] outline-none focus:border-[#6DBFAA]"
+                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-soft-bg text-[14px] outline-none focus:border-primary"
                     {...register('date')}
                   />
                 </div>
 
                 {/* MESSAGE */}
                 <div>
-                  <label className="block mb-1.5 text-[13px] font-medium text-[#1A2331]">
+                  <label className="block mb-1.5 text-[13px] font-medium text-foreground">
                     Message (Optional)
                   </label>
 
                   <textarea
                     rows={3}
                     placeholder="Any concerns?"
-                    className="w-full px-4 py-3 rounded-xl border border-[#E8EEF4] bg-[#F7F9FC] text-[14px] outline-none focus:border-[#6DBFAA]"
+                    className="w-full px-4 py-3 rounded-xl border border-card-border bg-soft-bg text-[14px] outline-none focus:border-primary"
                     {...register('message')}
                   />
                 </div>
@@ -183,7 +183,7 @@ export default function FormAndMap() {
                 {/* BUTTON */}
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-full text-white text-[14px] bg-[#6DBFAA] hover:opacity-90 transition"
+                  className="w-full py-3 rounded-full text-white text-[14px] bg-primary hover:opacity-90 transition"
                 >
                   Confirm Appointment
                 </button>

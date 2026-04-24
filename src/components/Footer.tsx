@@ -5,7 +5,7 @@ import Image from "next/image";
 import { MapPin, Phone, Clock, Heart, Mail } from "lucide-react";
 export default function Footer() {
   return (
-    <footer className="bg-[#1A2331] text-white">
+    <footer className="bg-foreground text-white">
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* LOGO + ABOUT */}
         <div>
@@ -30,7 +30,7 @@ export default function Footer() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:border-[#6DBFAA] hover:text-[#6DBFAA] transition"
+              className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:border-primary hover:text-primary transition"
             >
               <Heart size={15} />
             </a>
@@ -39,7 +39,7 @@ export default function Footer() {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:border-[#6DBFAA] hover:text-[#6DBFAA] transition"
+              className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:border-primary hover:text-primary transition"
             >
               <Mail size={15} />
             </a>
@@ -48,7 +48,7 @@ export default function Footer() {
 
         {/* QUICK LINKS */}
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6DBFAA] mb-5">
+          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-5">
             Quick Links
           </p>
 
@@ -63,7 +63,7 @@ export default function Footer() {
               <li key={link.path}>
                 <Link
                   href={link.path}
-                  className="text-sm text-white/60 hover:text-[#6DBFAA] transition"
+                  className="text-sm text-white/60 hover:text-primary transition"
                 >
                   {link.label}
                 </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
 
         {/* SERVICES */}
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6DBFAA] mb-5">
+          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-5">
             Services
           </p>
 
@@ -90,7 +90,7 @@ export default function Footer() {
               <li key={service}>
                 <Link
                   href="/services"
-                  className="text-sm text-white/60 hover:text-[#6DBFAA] transition"
+                  className="text-sm text-white/60 hover:text-primary transition"
                 >
                   {service}
                 </Link>
@@ -101,13 +101,13 @@ export default function Footer() {
 
         {/* CONTACT */}
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6DBFAA] mb-5">
+          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-5">
             Contact
           </p>
 
           <ul className="space-y-4">
             <li className="flex gap-3 items-start">
-              <MapPin size={15} className="text-[#6DBFAA] mt-0.5 shrink-0" />
+              <MapPin size={15} className="text-primary mt-0.5 shrink-0" />
               <span className="text-sm text-white/60 leading-relaxed">
                 Dwaraka Nagar Colony,
                 <br />
@@ -116,27 +116,27 @@ export default function Footer() {
             </li>
 
             <li className="flex gap-3 items-center">
-              <Phone size={15} className="text-[#6DBFAA] shrink-0" />
+              <Phone size={15} className="text-primary shrink-0" />
               <a
                 href="tel:7799376656"
-                className="text-sm text-white/60 hover:text-[#6DBFAA] transition"
+                className="text-sm text-white/60 hover:text-primary transition"
               >
                 +91 7799376656
               </a>
             </li>
 
             <li className="flex gap-3 items-center">
-  <Mail size={15} className="text-[#6DBFAA] shrink-0" />
+  <Mail size={15} className="text-primary shrink-0" />
   <a
     href="mailto:ramdaspallysusheel@gmail.com"
-    className="text-sm text-white/60 hover:text-[#6DBFAA] transition"
+    className="text-sm text-white/60 hover:text-primary transition"
   >
     ramdaspallysusheel@gmail.com
   </a>
 </li>
 
             <li className="flex gap-3 items-center">
-              <Clock size={15} className="text-[#6DBFAA] shrink-0" />
+              <Clock size={15} className="text-primary shrink-0" />
               <span className="text-sm text-white/60">Mon–Sat: 10am – 7pm</span>
             </li>
           </ul>

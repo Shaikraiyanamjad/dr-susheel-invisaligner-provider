@@ -33,10 +33,10 @@ export default function Gallery() {
           <p className="text-xs font-semibold uppercase tracking-[0.3em] eyebrow">
             Smile Gallery
           </p>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-[#101828]">
+          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-foreground">
             Real Results. Real Confidence.
           </h2>
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-text">
             Explore our patient transformations, modern clinic environment, and precision-driven dental care.
           </p>
         </div>

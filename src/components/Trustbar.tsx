@@ -68,11 +68,11 @@ export default function Trustbar() {
                 variants={item}
                 className="flex flex-col items-center text-center px-6"
               >
-                <Icon className="w-7 h-7 text-teal-400 mb-4" />
+                <Icon className="w-7 h-7 text-primary/80 mb-4" />
                 <h3 className="font-semibold text-base">
                   {itemData.title}
                 </h3>
-                <p className="text-sm text-gray-400 mt-1">
+                <p className="text-sm text-white/60 mt-1">
                   {itemData.subtitle}
                 </p>
               </motion.div>
@@ -98,11 +98,11 @@ export default function Trustbar() {
                 variants={item}
                 className="flex flex-col items-center text-center px-4"
               >
-                <Icon className="w-6 h-6 text-teal-400 mb-3" />
+                <Icon className="w-6 h-6 text-primary/80 mb-3" />
                 <h3 className="font-semibold text-sm leading-snug">
                   {itemData.title}
                 </h3>
-                <p className="text-xs text-gray-400 mt-1">
+                <p className="text-xs text-white/60 mt-1">
                   {itemData.subtitle}
                 </p>
               </motion.div>

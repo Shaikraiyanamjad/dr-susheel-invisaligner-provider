@@ -67,7 +67,7 @@ export default function ContactBar() {
                 {item.href ? (
                   <a
                     href={item.href}
-                    className="text-[14px] text-muted-text hover:text-teal-600 transition"
+                    className="text-[14px] text-muted-text hover:text-primary transition"
                   >
                     {item.content}
                   </a>

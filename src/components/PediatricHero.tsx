@@ -29,7 +29,7 @@ export default function PediatricHero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="mb-4 text-sm tracking-widest text-primary font-medium">
+          <p className="mb-4 text-sm tracking-widest text-primary font-medium eyebrow">
             Gentle Dental Care
           </p>
 

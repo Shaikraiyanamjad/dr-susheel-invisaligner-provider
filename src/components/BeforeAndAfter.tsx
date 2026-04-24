@@ -45,11 +45,11 @@ export default function BeforeAfter() {
             Transformation Results
           </p>
 
-          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-[#101828]">
+          <h2 className="mt-3 text-3xl sm:text-4xl font-semibold text-foreground">
             See The Difference Precision Makes
           </h2>
 
-          <p className="mt-4 text-gray-500">
+          <p className="mt-4 text-muted-text">
             Real patient results — drag to compare before & after.
           </p>
         </div>
@@ -124,7 +124,7 @@ export default function BeforeAfter() {
           </div>
         </div>
 
-        <p className="text-center mt-6 text-sm text-gray-500">
+        <p className="text-center mt-6 text-sm text-muted-text">
           Drag the slider to compare
         </p>
       </div>

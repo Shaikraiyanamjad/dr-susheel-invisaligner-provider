@@ -51,7 +51,7 @@ export default function About() {
               </span>
             </h2>
 
-            <p className="font-dm font-light leading-relaxed mb-6 text-[16px] text-[#6B7B8D]">
+            <p className="font-dm font-light leading-relaxed mb-6 text-[16px] text-muted-text">
               With over 12 years of clinical experience and a deep passion for
               smile transformation, Dr. Susheel has built one of Hyderabads
               most trusted dental practices. His philosophy is simple: every
@@ -59,14 +59,14 @@ export default function About() {
               template.
             </p>
 
-            <p className="font-dm font-light leading-relaxed mb-8 text-[16px] text-[#6B7B8D]">
+            <p className="font-dm font-light leading-relaxed mb-8 text-[16px] text-muted-text">
               Specialising in Invisalign orthodontics and gentle pediatric
               dentistry, Dr. Susheel combines clinical precision with warmth
               that puts even the most anxious patients at ease.
             </p>
 
             <Link href="/contact">
-              <button className="bg-green-bg text-white px-5 py-2 rounded-full hover:bg-teal-600 transition">
+              <button className="bg-green-bg text-white px-5 py-2 rounded-full hover:bg-primary transition">
             Book a Consultation
           </button>
             </Link>
@@ -86,18 +86,18 @@ export default function About() {
             </div>
 
             {/* STATS CARD */}
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-5 shadow-lg border border-[#E8EEF4]">
-              <p className="font-cormorant font-bold text-[#1A2331] text-[28px]">
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-5 shadow-lg border border-card-border">
+              <p className="font-cormorant font-bold text-foreground text-[28px]">
                 500+
               </p>
-              <p className="font-dm font-light text-[#6B7B8D] text-[13px]">
+              <p className="font-dm font-light text-muted-text text-[13px]">
                 Smiles Transformed
               </p>
             </div>
 
             {/* BADGE */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full flex items-center justify-center bg-[#EAF7F3] border-2 border-[#6DBFAA]">
-              <Award size={28} color="#6DBFAA" />
+            <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full flex items-center justify-center bg-process-bg border-2 border-primary">
+              <Award size={28} className="text-primary" />
             </div>
           </motion.div>
         </motion.div>

@@ -28,10 +28,10 @@ function SectionHeader({
 }) {
   return (
     <div className={`mb-12 ${centered ? 'text-center' : ''}`}>
-      <p className="eyebrow text-sm tracking-widest text-teal-600 mb-2">
+      <p className="eyebrow text-sm tracking-widest text-primary mb-2">
         {eyebrow}
       </p>
-      <h2 className="text-3xl md:text-5xl font-semibold text-gray-900">
+      <h2 className="text-3xl md:text-5xl font-semibold text-foreground">
         {title}
       </h2>
     </div>
@@ -82,11 +82,7 @@ export default function Credentials() {
             return (
               <motion.div
                 key={c.label}
-                className="bg-white rounded-2xl p-6 text-center"
-                style={{
-                  border: '1px solid #E8EEF4',
-                  boxShadow: '0 2px 12px rgba(26,35,49,0.04)',
-                }}
+                className="bg-white rounded-2xl p-6 text-center border-card-border shadow-sm"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
@@ -95,18 +91,18 @@ export default function Credentials() {
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 bg-process-bg"
                 >
-                  <Icon size={20} color="#6DBFAA" strokeWidth={1.5} />
+                  <Icon size={20} className="text-primary" strokeWidth={1.5} />
                 </div>
 
                 <p
-                  className="font-medium text-gray-900 mb-1"
+                  className="font-medium text-foreground mb-1"
                   style={{ fontSize: '14px' }}
                 >
                   {c.label}
                 </p>
 
                 <p
-                  className="font-light text-gray-500"
+                  className="font-light text-muted-text"
                   style={{ fontSize: '12px' }}
                 >
                   {c.sub}

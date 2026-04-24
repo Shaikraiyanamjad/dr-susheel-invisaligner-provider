@@ -24,14 +24,14 @@ function SectionHeader({
 }) {
   return (
     <div>
-      <p className="text-sm eyebrow tracking-widest text-teal-600 mb-3">
+      <p className="text-sm eyebrow tracking-widest text-primary mb-3">
         {eyebrow}
       </p>
-      <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+      <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-gray-500 leading-relaxed text-sm md:text-base">
+        <p className="text-muted-text leading-relaxed text-sm md:text-base">
           {subtitle}
         </p>
       )}
@@ -83,7 +83,7 @@ export default function Philosophy() {
                   className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-process-bg"
                 >
                   <span
-                    className="font-medium text-teal-600"
+                    className="font-medium text-primary"
                     style={{ fontSize: '12px' }}
                   >
                     0{i + 1}
@@ -92,13 +92,13 @@ export default function Philosophy() {
 
                 <div>
                   <h3
-                    className="font-sm eyebrow text-gray-900 mb-2"
+                    className="font-sm eyebrow text-foreground mb-2"
                     style={{ fontSize: '16px' }}
                   >
                     {p.title}
                   </h3>
                   <p
-                    className="font-light text-gray-500 leading-relaxed"
+                    className="font-light text-muted-text leading-relaxed"
                     style={{ fontSize: '14px', lineHeight: '1.8' }}
                   >
                     {p.desc}

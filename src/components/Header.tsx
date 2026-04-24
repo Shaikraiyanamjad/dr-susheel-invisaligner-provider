@@ -37,7 +37,7 @@ const Header = () => {
 </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6 text-gray-700 text-md">
+        <nav className="hidden lg:flex items-center gap-6 text-foreground text-md">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
 
@@ -46,7 +46,7 @@ const Header = () => {
                 <Link
                   href={link.href}
                   className={`pb-1 transition ${
-                    isActive ? "text-teal-600" : "hover:text-teal-600"
+                    isActive ? "text-primary" : "hover:text-primary"
                   }`}
                 >
                   {link.name}
@@ -56,7 +56,7 @@ const Header = () => {
                 {isActive && (
                   <motion.div
                     layoutId="underline"
-                    className="absolute left-0 bottom-0 h-[2px] w-full bg-teal-600"
+                    className="absolute left-0 bottom-0 h-[2px] w-full bg-primary"
                     transition={{
                       type: "spring",
                       stiffness: 500,
@@ -71,7 +71,7 @@ const Header = () => {
 
         {/* Button */}
         <div className="hidden lg:block">
-          <Link href="/contact" className="bg-green-bg text-white px-5 py-2 rounded-full hover:bg-teal-600 transition inline-block">
+          <Link href="/contact" className="bg-green-bg text-white px-5 py-2 rounded-full hover:bg-primary transition inline-block">
             <span className="cursor-pointer">Book Now</span>
           </Link>
         </div>
@@ -95,8 +95,8 @@ const Header = () => {
           onClick={() => setOpen(false)}
           className={`block py-2 ${
             isActive
-              ? "text-teal-600 font-bold"
-              : "text-gray-700"
+              ? "text-primary font-bold"
+              : "text-foreground"
           }`}
         >
           {link.name}
@@ -105,7 +105,7 @@ const Header = () => {
     );
   })}
 <Link href="/contact" className="w-full">
-  <span className="mt-3 w-full block text-center bg-green-bg text-white py-2 px-20 rounded-full cursor-pointer">
+  <span className="mt-3 w-full block text-center bg-primary text-white py-2 px-20 rounded-full cursor-pointer hover:opacity-90 transition">
     Book Now
   </span>
 </Link>

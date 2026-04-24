@@ -10,7 +10,7 @@ import { useState } from 'react';
 /* ---------------------------------- */
 function Button({ children }: { children: React.ReactNode }) {
   return (
-    <button className="bg-green-bg text-white px-6 py-3 rounded-full text-sm md:text-base hover:bg-teal-600 transition">
+    <button className="bg-green-bg text-white px-6 py-3 rounded-full text-sm md:text-base hover:bg-primary transition">
       {children}
     </button>
   );
@@ -32,7 +32,7 @@ export default function AlignerTherapy() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="mb-2 text-sm tracking-widest text-teal-600 eyebrow">
+          <p className="mb-2 text-sm tracking-widest text-primary eyebrow">
             Clear Aligner Therapy
           </p>
 
