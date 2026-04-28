@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Clock, Heart, Mail } from "lucide-react";
+import { MapPin, Phone, Clock, Mail } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-foreground text-white">
@@ -32,7 +32,21 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:border-primary hover:text-primary transition"
             >
-              <Heart size={15} />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
             </a>
 
             <a
@@ -41,7 +55,19 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:border-primary hover:text-primary transition"
             >
-              <Mail size={15} />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
             </a>
           </div>
         </div>
@@ -126,14 +152,14 @@ export default function Footer() {
             </li>
 
             <li className="flex gap-3 items-center">
-  <Mail size={15} className="text-primary shrink-0" />
-  <a
-    href="mailto:ramdaspallysusheel@gmail.com"
-    className="text-sm text-white/60 hover:text-primary transition"
-  >
-    ramdaspallysusheel@gmail.com
-  </a>
-</li>
+              <Mail size={15} className="text-primary shrink-0" />
+              <a
+                href="mailto:ramdaspallysusheel@gmail.com"
+                className="text-sm text-white/60 hover:text-primary transition"
+              >
+                ramdaspallysusheel@gmail.com
+              </a>
+            </li>
 
             <li className="flex gap-3 items-center">
               <Clock size={15} className="text-primary shrink-0" />
